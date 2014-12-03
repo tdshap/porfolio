@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+.welcome{
+	background-image: url(/assets/stage.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	min-height: 700px;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+}
+.welcome h1{
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 150px;
+	font-size: 70px;
+}
+
+.welcome h1, h3{
+ 	-moz-animation-name: dropHeader;
+  -moz-animation-iteration-count: once;
+  -moz-animation-timing-function: ease-in;
+  -moz-animation-duration: 0.7s;
+
+  -webkit-animation-name: dropHeader;
+  -webkit-animation-iteration-count: once;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 0.7s;
+
+  animation-name: dropHeader;
+  animation-iteration-count: once;
+  animation-timing-function: ease-in;
+  animation-duration: 0.7s;
+}
+.welcome h3{
+	width: 60%;
+	margin: 0 auto;
+	padding-top: 100px;
+	font-size: 30px;
+}
+
+@-moz-keyframes dropHeader {
+  0% {
+      -moz-transform: translateY(-200px);
+
+  }
+  100% {
+      -moz-transform: translateY(0);
+  }
+}
+@-webkit-keyframes dropHeader {
+  0% {
+      -webkit-transform: translateY(-200px);
+  }
+  100% {
+      -webkit-transform: translateY(0);
+  }
+}
+@keyframes dropHeader {
+  0% {
+      transform: translateY(-200px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
