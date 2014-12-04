@@ -1,21 +1,27 @@
+/*sans serif*/
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
-
+body{
+	background: #ecf0f1;
+}
+.container{
+	margin: 0;
+	padding: 0;
+}
 .welcome{
 	background-image: url(/assets/stage.jpg);
 	background-repeat: no-repeat;
-	background-position: center center;
-	min-height: 700px;
-	font-family: 'Montserrat', sans-serif;
+	background-position: center;
+	min-height: 750px;
 	text-align: center;
+	padding-top: 0px;
+	position: absolute;
 }
 .welcome h1{
+	font-family: 'Montserrat', sans-serif;
 	width: 80%;
 	margin: 0 auto;
 	padding-top: 150px;
 	font-size: 70px;
-}
-
-.welcome h1, h3{
  	-moz-animation-name: dropHeader;
   -moz-animation-iteration-count: once;
   -moz-animation-timing-function: ease-in;
@@ -31,11 +37,28 @@
   animation-timing-function: ease-in;
   animation-duration: 0.7s;
 }
+
 .welcome h3{
-	width: 60%;
+	font-family: 'Montserrat', sans-serif;
+	width: 100%;
 	margin: 0 auto;
 	padding-top: 100px;
 	font-size: 30px;
+	font-weight: 300;
+ 	-moz-animation-name: raiseHeader;
+  -moz-animation-iteration-count: once;
+  -moz-animation-timing-function: ease-in;
+  -moz-animation-duration: 0.7s;
+
+  -webkit-animation-name: raiseHeader;
+  -webkit-animation-iteration-count: once;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 0.7s;
+
+  animation-name: raiseHeader;
+  animation-iteration-count: once;
+  animation-timing-function: ease-in;
+  animation-duration: 0.7s;
 }
 
 @-moz-keyframes dropHeader {
@@ -55,11 +78,76 @@
       -webkit-transform: translateY(0);
   }
 }
-@keyframes dropHeader {
+@keyframes raiseHeader {
   0% {
-      transform: translateY(-200px);
+      transform: translateY(200px);
   }
   100% {
       transform: translateY(0);
   }
 }
+
+@-moz-keyframes raiseHeader {
+  0% {
+      -moz-transform: translateY(200px);
+
+  }
+  100% {
+      -moz-transform: translateY(0);
+  }
+}
+@-webkit-keyframes raiseHeader {
+  0% {
+      -webkit-transform: translateY(200px);
+  }
+  100% {
+      -webkit-transform: translateY(0);
+  }
+}
+@keyframes raiseHeader {
+  0% {
+      transform: translateY(200px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+/*navbar*/
+.navigation{
+	z-index: 10;
+	width: 100%;
+	margin: 0 auto;
+	background: #363636;
+	color: white;
+	position: absolute;
+}
+.navigation ul{
+	text-align: center;
+	padding-top: 20px;
+}
+.navigation ul li {
+	display: inline;
+	padding: 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.navigation ul li a {
+	text-decoration: none;
+	color: #ecf0f1;
+	padding: 5px 5px;
+}
+.navigation ul li a:hover{
+	border: solid #ecf0f1 2px;
+}
+.active{
+	border: solid #ecf0f1 2px;
+}
+
+
+
+
+
+
+
+
