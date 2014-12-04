@@ -1,7 +1,3 @@
-$(document).ready(function(){
-	
-})
-
 var WelcomePage = Backbone.View.extend({ 
 	tagName: "div", 
 	attributes: {
@@ -18,21 +14,6 @@ var WelcomePage = Backbone.View.extend({
 
 })
 
-var NavBar = Backbone.View.extend({
-	tagName: "nav",
-	attributes: {
-		class: "navigation"
-	},
-	template: _.template($("#navbar").html() ),
-	initialize: function(){
-		this.render()
-	},
-	render: function(){
-		var navbar = this.$el.html( this.template )
-		$(document.body).append(navbar)
-	}
-})
-
 
 var WorkView = Backbone.View.extend({
 	tagName: "div",
@@ -42,6 +23,25 @@ var WorkView = Backbone.View.extend({
 
 })
 
+
+var AboutView = Backbone.View.extend({
+	tagName: "div",
+	attributes: {
+		class: "about"
+	},
+	template: _.template($("#about").html() ),
+	initialize: function(){
+		this.render()
+	},
+	render: function(){
+		var about = this.$el.html( this.template )
+		$("div.container").append(about)
+	}
+})
+
+var ContactView = Backbone.View.extend({
+
+})
 
 
 // Router
@@ -57,26 +57,39 @@ var Router = Backbone.Router.extend({
 var router = new Router;
 
 router.on("route:home", function(){
-	$("div.container").empty()
-	navbar = new NavBar
-	welcomePage = new WelcomePage
+	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
+		$(".about").fadeOut("slow")
+	}
+
+	if ($(".welcome") == [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none") {
+		$(".welcome").fadeIn("slow")
+	} else {
+		welcomePage = new WelcomePage
+	}
 
 
 })
 router.on("route:work", function(){
-	$("div.container").empty()
+	$("div.container").fadeOut("slow")
+
 
 })
 router.on("route:about", function(){
-	$("div.container").empty()
+	if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
+		$(".welcome").fadeOut("slow")
+	}
+
+	aboutView = new AboutView
 
 })
 router.on("route:skills", function(){
-	$("div.container").empty()
+	$("div.container").fadeOut("slow")
+
 
 })
 router.on("route:contact", function(){
-	$("div.container").empty()
+	$("div.container").fadeOut("slow")
+
 
 
 })
