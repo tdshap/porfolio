@@ -16,6 +16,7 @@
 // require_tree .
 
 //= require ./bootstrap
+//= require ./Chart.min.js
 //= require ./underscore/underscore
 //= require ./backbone/backbone
 //= require ./app

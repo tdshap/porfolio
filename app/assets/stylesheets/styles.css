@@ -153,18 +153,25 @@ body{
 .about{
 	min-height: 300px;
 	width: 60%;
-	margin: auto auto;
-	padding: 150px 0 0;
+	margin: 100px auto;
+	padding: 20px 20px 20px;
 	font-family: 'Montserrat', sans-serif;
 	text-align: justify;
+	border: solid 6px #fff;
 }
 img.tess{
 	width: 35%;
 	margin: 0 auto;
 	display: block;
+	padding-bottom: 30px;
 }
 
 
+/*skills page*/
+canvas{
+	margin: 100px auto;
+	width: 300px;
+}
 
 
 
