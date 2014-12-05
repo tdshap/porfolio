@@ -166,12 +166,78 @@ img.tess{
 	padding-bottom: 30px;
 }
 
-
-/*skills page*/
-canvas{
+/*work page*/
+div.work{
+	height: auto;
+	width: 90%;
 	margin: 100px auto;
-	width: 300px;
+	overflow: hidden;
+}
+img.work{
+ 	padding: 10px;
+}
+
+#transit{
+	width: 100%;
+	padding: 20px;
+	border: solid 6px #fff;
+	border-bottom: solid 30px #fff;
+}
+#thirsty{
+	width: 100%;
+	padding: 20px;
+	border: solid 6px #fff;
+	border-top: none;
+	border-bottom: solid 30px #fff;;
+	margin-top: -6px;
+}
+#timehack{
+	width: 100%;
+	padding: 20px;
+	border: solid 6px #fff;
+	border-top: none;
+	border-bottom: solid 30px #fff;;
+	margin-top: -6px;
+	
+}
+
+#eventalist{
+	width: 100%;
+	padding: 20px;
+	border: solid 6px #fff;
+	border-top: none;
+	margin-top: -6px;
+
+}
+
+.manyPics img{
+	vertical-align: text-top;
+}
+.manyPics{
+	margin-bottom: 20px;
+}
+.logo img {
+	display: block;
+}
+p.blurb{
+	width: 70%;
+	margin: 20px auto;
+	text-align: justify;
+	padding: 20px 0 0;
+	line-height: 1.5;
 }
 
 
+/* Big Triangle */
+svg#bigTriangleColor {
+	pointer-events: none;
+	border-right: solid 6px #fff;
+	border-left: solid 6px #fff;
+}
 
+#bigTriangleColor path {
+	fill: #fff;
+	stroke: #fff;
+	stroke-width: 2;
+
+}

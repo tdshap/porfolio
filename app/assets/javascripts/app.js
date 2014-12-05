@@ -17,7 +17,8 @@ var WelcomePage = Backbone.View.extend({
 var AboutView = Backbone.View.extend({
 	tagName: "div",
 	attributes: {
-		class: "about"
+		class: "about",
+		display: "none"
 	},
 	template: _.template($("#about").html() ),
 	initialize: function(){
@@ -26,6 +27,7 @@ var AboutView = Backbone.View.extend({
 	render: function(){
 		var about = this.$el.html( this.template )
 		$("div.container").append(about)
+		about.easeIn("slow")
 	}
 })
 
@@ -75,6 +77,9 @@ router.on("route:home", function(){
 	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
 		$(".about").fadeOut("slow")
 	}
+	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
+		$(".work").fadeOut("slow")
+	}
 
 	if ($(".welcome") == [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none") {
 		$(".welcome").fadeIn("slow")
@@ -84,11 +89,20 @@ router.on("route:home", function(){
 })
 
 router.on("route:work", function(){
-	// if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
-	// 	$(".welcome").fadeOut("slow")
-	// }
-debugger
-	var workView = new WorkView
+	if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
+		$(".welcome").fadeOut("slow")
+	}
+	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
+		$(".about").fadeOut("slow")
+	}
+
+
+	if ($(".work") == [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none") {
+		$(".work").fadeIn("slow")
+	} else {
+		var workView = new WorkView
+	}
+	
 
 
 })
@@ -96,6 +110,9 @@ debugger
 router.on("route:about", function(){
 	if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
 		$(".welcome").fadeOut("slow")
+	}
+	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
+		$(".work").fadeOut("slow")
 	}
 
 	aboutView = new AboutView
