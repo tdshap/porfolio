@@ -27,12 +27,24 @@ var AboutView = Backbone.View.extend({
 	render: function(){
 		var about = this.$el.html( this.template )
 		$("div.container").append(about)
-		about.easeIn("slow")
+		about.fadeIn("slow")
 	}
 })
 
 var ContactView = Backbone.View.extend({
-
+	tagName: "div",
+	attributes: {
+		class: "contact"
+	},
+	template: _.template($("#contactView").html() ),
+	initialize: function(){
+		this.render()
+	},
+	render: function(){
+		var contact = this.$el.html( this.template )
+		$("div.container").append(contact)
+		contact.fadeIn("slow")
+	}
 })
 
 var WorkView = Backbone.View.extend({
@@ -47,17 +59,8 @@ var WorkView = Backbone.View.extend({
 	render: function(){
 		var work = this.$el.html( this.template )
 		$("div.container").append(work)
+		work.fadeIn("slow")
 	}
-})
-
-
-var SkillsView = Backbone.View.extend({
-	tagName: "div",
-	attributes: {
-		class: "skills",
-	}
-	// template: _.template($("#skills").html() )
-
 })
 
 
@@ -80,6 +83,9 @@ router.on("route:home", function(){
 	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
 		$(".work").fadeOut("slow")
 	}
+	if ($(".contact") != [] || $(".contact")[0] != undefined && $(".contact")[0].style.display == "none"){
+		$(".contact").fadeOut("fast")
+	}
 
 	if ($(".welcome") == [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none") {
 		$(".welcome").fadeIn("slow")
@@ -95,38 +101,61 @@ router.on("route:work", function(){
 	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
 		$(".about").fadeOut("slow")
 	}
-
+	if ($(".contact") != [] || $(".contact")[0] != undefined && $(".contact")[0].style.display == "none"){
+		$(".contact").fadeOut("slow")
+	}
 
 	if ($(".work") == [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none") {
 		$(".work").fadeIn("slow")
 	} else {
 		var workView = new WorkView
 	}
-	
-
 
 })
 
 router.on("route:about", function(){
+// find active div and fade out
 	if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
 		$(".welcome").fadeOut("slow")
 	}
 	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
 		$(".work").fadeOut("slow")
 	}
+	if ($(".contact") != [] || $(".contact")[0] != undefined && $(".contact")[0].style.display == "none"){
+		$(".contact").fadeOut("slow")
+	}
 
-	aboutView = new AboutView
-})
-
-router.on("route:skills", function(){
-
-
-
+// fade in about
+	if ($(".about") == [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none") {
+		$(".about").fadeIn("slow")
+	} else {
+		var aboutView = new AboutView
+	}
+	
 })
 
 
 router.on("route:contact", function(){
-	$("div.container").fadeOut("slow")
+	// find active div and fade out
+	if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
+		$(".welcome").fadeOut("slow")
+	}
+	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
+		$(".work").fadeOut("slow")
+	}
+	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
+		$(".about").fadeOut("slow")
+	}
+
+
+
+	if ($(".contact") == [] || $(".contact")[0] != undefined && $(".contact")[0].style.display == "none") {
+		$(".contact").fadeIn("slow")
+	} else {
+		var contactView = new ContactView
+	}
+
+	
 
 
 

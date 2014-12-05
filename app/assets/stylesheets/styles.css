@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 body{
 	background: #ecf0f1;
+	color: #363636
 }
 .container{
 	height: 100%;
@@ -198,7 +199,6 @@ img.work{
 	border-top: none;
 	border-bottom: solid 30px #fff;;
 	margin-top: -6px;
-	
 }
 
 #eventalist{
@@ -207,7 +207,6 @@ img.work{
 	border: solid 6px #fff;
 	border-top: none;
 	margin-top: -6px;
-
 }
 
 .manyPics img{
@@ -216,6 +215,9 @@ img.work{
 .manyPics{
 	margin-bottom: 20px;
 }
+.logo{
+	padding-top: 10px;
+}
 .logo img {
 	display: block;
 }
@@ -223,9 +225,14 @@ p.blurb{
 	width: 70%;
 	margin: 20px auto;
 	text-align: justify;
-	padding: 20px 0 0;
+	padding: 20px 0;
 	line-height: 1.5;
 }
+p.blurb a{
+	color: #363636;
+	text-decoration: underline;
+}
+
 
 
 /* Big Triangle */
