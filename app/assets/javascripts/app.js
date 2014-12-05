@@ -79,9 +79,11 @@ var router = new Router;
 router.on("route:home", function(){
 	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
 		$(".about").fadeOut("slow")
+		$("nav ul").children()
 	}
 	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
 		$(".work").fadeOut("slow")
+		// $("nav ul").children()[0].children.toggleClass("active")
 	}
 	if ($(".contact") != [] || $(".contact")[0] != undefined && $(".contact")[0].style.display == "none"){
 		$(".contact").fadeOut("fast")

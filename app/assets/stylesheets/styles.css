@@ -142,13 +142,14 @@ body{
 	text-decoration: none;
 	color: #ecf0f1;
 	padding: 5px 5px;
+	border: solid 2px transparent;
 }
 .navigation ul li a:hover{
 	border: solid #ecf0f1 2px;
 }
-/*.active{
+.active{
 	border: solid #ecf0f1 2px;
-}*/
+}
 
 /*about page*/
 .about{
@@ -165,6 +166,15 @@ img.tess{
 	margin: 0 auto;
 	display: block;
 	padding-bottom: 30px;
+}
+
+.web{
+	width: 80%;
+	margin: 0 auto;
+
+}
+.web i{
+	padding: 0 15px;
 }
 
 /*work page*/
@@ -248,3 +258,5 @@ svg#bigTriangleColor {
 	stroke-width: 2;
 
 }
+
+
