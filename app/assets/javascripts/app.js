@@ -31,22 +31,6 @@ var AboutView = Backbone.View.extend({
 	}
 })
 
-var ContactView = Backbone.View.extend({
-	tagName: "div",
-	attributes: {
-		class: "contact"
-	},
-	template: _.template($("#contactView").html() ),
-	initialize: function(){
-		this.render()
-	},
-	render: function(){
-		var contact = this.$el.html( this.template )
-		$("div.container").append(contact)
-		contact.fadeIn("slow")
-	}
-})
-
 var WorkView = Backbone.View.extend({
 	tagName: "div",
 	attributes: {
@@ -63,7 +47,25 @@ var WorkView = Backbone.View.extend({
 	}
 })
 
-
+var SkillsView = Backbone.View.extend({
+	tagName: "div",
+	attributes: {
+		class: "skills"
+	},
+	template: _.template($("#skillsView").html() ),
+	initialize: function(){
+		this.render()
+	},
+	render: function(){
+		var skills = this.$el.html( this.template )
+		$("div.container").append(skills)
+		skills.fadeIn("slow")
+	}
+})
+// $("nav ul li:nth-child(1)").first().children().toggleClass("active")
+// $("nav ul li:nth-child(2)").first().children().toggleClass("active")
+// $("nav ul li:nth-child(3)").first().children().toggleClass("active")
+// $("nav ul li:nth-child(4)").first().children().toggleClass("active")
 // Router
 var Router = Backbone.Router.extend({
 	routes: {
@@ -71,7 +73,6 @@ var Router = Backbone.Router.extend({
 		"work":"work",
 		"about":"about",
 		"skills":"skills",
-		"contact":"contact"
 	}
 })
 var router = new Router;
@@ -79,32 +80,39 @@ var router = new Router;
 router.on("route:home", function(){
 	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
 		$(".about").fadeOut("slow")
-		$("nav ul").children()
+
 	}
 	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
 		$(".work").fadeOut("slow")
-		// $("nav ul").children()[0].children.toggleClass("active")
+		console.log("closing work ")
+		$("nav ul li:nth-child(1)").first().children().toggleClass("active")
 	}
-	if ($(".contact") != [] || $(".contact")[0] != undefined && $(".contact")[0].style.display == "none"){
-		$(".contact").fadeOut("fast")
+	if ($(".skills") != [] || $(".skills")[0] != undefined && $(".skills")[0].style.display == "none"){
+		$(".skills").fadeOut("slow")
+
 	}
 
 	if ($(".welcome") == [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none") {
 		$(".welcome").fadeIn("slow")
+
+		
 	} else {
 		welcomePage = new WelcomePage
+		
 	}
 })
 
 router.on("route:work", function(){
 	if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
 		$(".welcome").fadeOut("slow")
+
+		
 	}
 	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
 		$(".about").fadeOut("slow")
 	}
-	if ($(".contact") != [] || $(".contact")[0] != undefined && $(".contact")[0].style.display == "none"){
-		$(".contact").fadeOut("slow")
+	if ($(".skills") != [] || $(".skills")[0] != undefined && $(".skills")[0].style.display == "none"){
+		$(".skills").fadeOut("slow")
 	}
 
 	if ($(".work") == [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none") {
@@ -122,9 +130,11 @@ router.on("route:about", function(){
 	}
 	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
 		$(".work").fadeOut("slow")
+		console.log("closing work ")
+		$("nav ul li:nth-child(1)").first().children().toggleClass("active")
 	}
-	if ($(".contact") != [] || $(".contact")[0] != undefined && $(".contact")[0].style.display == "none"){
-		$(".contact").fadeOut("slow")
+	if ($(".skills") != [] || $(".skills")[0] != undefined && $(".skills")[0].style.display == "none"){
+		$(".skills").fadeOut("slow")
 	}
 
 // fade in about
@@ -135,32 +145,32 @@ router.on("route:about", function(){
 	}
 	
 })
-
-
-router.on("route:contact", function(){
-	// find active div and fade out
+router.on("route:skills", function(){
 	if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
 		$(".welcome").fadeOut("slow")
+
 	}
 	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
 		$(".work").fadeOut("slow")
+		console.log("closing work ")
+		$("nav ul li:nth-child(1)").first().children().toggleClass("active")
 	}
 	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
 		$(".about").fadeOut("slow")
+
 	}
 
+	if ($(".skills") == [] || $(".skills")[0] != undefined && $(".skills")[0].style.display == "none") {
+		$(".skills").fadeIn("slow")
 
-
-	if ($(".contact") == [] || $(".contact")[0] != undefined && $(".contact")[0].style.display == "none") {
-		$(".contact").fadeIn("slow")
 	} else {
-		var contactView = new ContactView
+		var skillsView = new SkillsView
+
 	}
-
-	
-
-
-
+ 
 })
+
+
+
 
 Backbone.history.start()
