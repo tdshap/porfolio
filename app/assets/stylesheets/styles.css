@@ -1,5 +1,5 @@
 /*sans serif*/
-@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(//fonts.googleapis.com/css?family=Montserrat);
 
 @media screen and (min-width : 320px) and (max-width : 560px) {
 	p.blurb{
