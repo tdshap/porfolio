@@ -16,10 +16,13 @@
 	.navigation ul li {
 		padding: 10px;
 	}
+	.skills div{
+		width: 100%;
+	}
 
 }
 
-@media screen and (min-width : 561px){
+@media screen and (min-width : 561px) {
 	p.blurb{
 		width: 60%;
 		text-align: justify;
@@ -31,14 +34,24 @@
 	.navigation ul li {
 		padding: 30px;
 	}
+	.skills div{
+		width: 100%;
+	}
 }
 
+@media screen and (min-width: 1052px) {
+	.skills div{
+		width: 33%;
+	}
+
+
+}
 
 
 
 body{
 	background: #ecf0f1;
-	color: #363636
+	color: #363636;
 }
 .container{
 	height: 100%;
@@ -125,9 +138,9 @@ a:hover{
       -webkit-transform: translateY(0);
   }
 }
-@keyframes raiseHeader {
+@keyframes dropHeader {
   0% {
-      transform: translateY(200px);
+      transform: translateY(-200px);
   }
   100% {
       transform: translateY(0);
@@ -168,7 +181,6 @@ a:hover{
 	background: #363636;
 	color: white;
 	position: absolute;
-	border-radius: 0px;
 }
 .navigation ul{
 	text-align: center;
@@ -320,14 +332,47 @@ svg#bigTriangleColor {
 	stroke: #fff;
 	stroke-width: 2;
 }
-
-
 .skills{
-	-moz-column-count: 3;
-	-moz-column-gap: 10px;
-	-webkit-column-count: 3;
-	-webkit-column-gap: 10px;
-	column-count: 3;
-	column-gap: 10px;
+	height: auto;
+	width: 80%;
+	margin: 100px auto;
+	border: solid 6px #fff;;
 }
 
+.skills div{
+	display: inline-block;
+	vertical-align: text-top;
+}
+ 
+.skillscol ul li{
+	list-style-type: none;
+	text-align: center;
+	width:100%;
+}
+
+.skillscol ul{
+	padding: 0;
+	width:100%;
+}
+.skillscol > h1{
+	text-align: center;
+	text-decoration: underline;
+}
+
+
+
+
+
+footer{
+	font-size: 14px;
+	display: block;
+	width: 100%;
+	position: relative;
+	bottom:0;
+	clear: both;
+	background: #363636;
+	color: white;
+	height: 50px;
+	text-align: center;
+	padding-top: 20px;
+}
