@@ -41,7 +41,7 @@
 
 @media screen and (min-width: 1052px) {
 	.skills div{
-		width: 33%;
+		width: 31%;
 	}
 
 
@@ -297,7 +297,7 @@ p.blurb a{
 .mail{
 	width: 218px;
 	display: block;
-	margin: 10px auto;
+	margin: 10px auto 50px;
 	background: #363636;
 	color: #fff;
 }
@@ -334,9 +334,8 @@ svg#bigTriangleColor {
 }
 .skills{
 	height: auto;
-	width: 80%;
-	margin: 100px auto;
-	border: solid 6px #fff;;
+	width: 100%;
+	margin: 50px auto 10px;
 }
 
 .skills div{
@@ -357,22 +356,17 @@ svg#bigTriangleColor {
 .skillscol > h1{
 	text-align: center;
 	text-decoration: underline;
+	font-size: 28px;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
 }
 
-
-
-
-
-footer{
-	font-size: 14px;
-	display: block;
-	width: 100%;
-	position: relative;
-	bottom:0;
-	clear: both;
-	background: #363636;
-	color: white;
-	height: 50px;
-	text-align: center;
-	padding-top: 20px;
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image:    -moz-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image:     -ms-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image:      -o-linear-gradient(left, #ccc, #333, #ccc); 
 }

@@ -47,21 +47,21 @@ var WorkView = Backbone.View.extend({
 	}
 })
 
-var SkillsView = Backbone.View.extend({
-	tagName: "div",
-	attributes: {
-		class: "skills"
-	},
-	template: _.template($("#skillsView").html() ),
-	initialize: function(){
-		this.render()
-	},
-	render: function(){
-		var skills = this.$el.html( this.template )
-		$("div.container").append(skills)
-		skills.fadeIn("slow")
-	}
-})
+// var SkillsView = Backbone.View.extend({
+// 	tagName: "div",
+// 	attributes: {
+// 		class: "skills"
+// 	},
+// 	template: _.template($("#skillsView").html() ),
+// 	initialize: function(){
+// 		this.render()
+// 	},
+// 	render: function(){
+// 		var skills = this.$el.html( this.template )
+// 		$("div.container").append(skills)
+// 		skills.fadeIn("slow")
+// 	}
+// })
 
 // Router
 var Router = Backbone.Router.extend({
@@ -69,7 +69,6 @@ var Router = Backbone.Router.extend({
 		"": "home",
 		"work":"work",
 		"about":"about",
-		"skills":"skills",
 	}
 })
 var router = new Router;
@@ -83,34 +82,27 @@ router.on("route:home", function(){
 		$(".work").fadeOut("fast")
 		$("nav ul li:nth-child(1)").first().children().removeClass("active")
 	}
-	if ($(".skills") != [] || $(".skills")[0] != undefined && $(".skills")[0].style.display == "none"){
-		$(".skills").fadeOut("fast")
-		$("nav ul li:nth-child(3)").first().children().removeClass("active")
-	}
 
 
 	if ($(".welcome") == [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none") {
 		$(".welcome").fadeIn("slow")
-		$("nav ul li:nth-child(4)").first().children().addClass("active")
+		$("nav ul li:nth-child(3)").first().children().addClass("active")
 	} else {
 		welcomePage = new WelcomePage
-		$("nav ul li:nth-child(4)").first().children().addClass("active")
+		$("nav ul li:nth-child(3)").first().children().addClass("active")
 	}
 })
 
 router.on("route:work", function(){
 	if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
 		$(".welcome").fadeOut("fast")
-		$("nav ul li:nth-child(4)").first().children().removeClass("active")
+		$("nav ul li:nth-child(3)").first().children().removeClass("active")
 	}
 	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
 		$(".about").fadeOut("fast")
 		$("nav ul li:nth-child(2)").first().children().removeClass("active")
 	}
-	if ($(".skills") != [] || $(".skills")[0] != undefined && $(".skills")[0].style.display == "none"){
-		$(".skills").fadeOut("fast")
-		$("nav ul li:nth-child(3)").first().children().removeClass("active")
-	}
+
 
 
 	if ($(".work") == [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none") {
@@ -128,16 +120,13 @@ router.on("route:work", function(){
 router.on("route:about", function(){
 	if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
 		$(".welcome").fadeOut("fast")
-		$("nav ul li:nth-child(4)").first().children().removeClass("active")
+		$("nav ul li:nth-child(3)").first().children().removeClass("active")
 	}
 	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
 		$(".work").fadeOut("fast")
 		$("nav ul li:nth-child(1)").first().children().removeClass("active")
 	}
-	if ($(".skills") != [] || $(".skills")[0] != undefined && $(".skills")[0].style.display == "none"){
-		$(".skills").fadeOut("fast")
-		$("nav ul li:nth-child(3)").first().children().removeClass("active")
-	}
+
 
 
 	if ($(".about") == [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none") {
@@ -149,29 +138,7 @@ router.on("route:about", function(){
 	}
 	
 })
-router.on("route:skills", function(){
-	if ($(".welcome") != [] || $(".welcome")[0] != undefined && $(".welcome")[0].style.display == "none"){
-		$(".welcome").fadeOut("fast")
-		$("nav ul li:nth-child(4)").first().children().removeClass("active")
-	}
-	if ($(".work") != [] || $(".work")[0] != undefined && $(".work")[0].style.display == "none"){
-		$(".work").fadeOut("fast")
-		$("nav ul li:nth-child(1)").first().children().removeClass("active")
-	}
-	if ($(".about") != [] || $(".about")[0] != undefined && $(".about")[0].style.display == "none"){
-		$(".about").fadeOut("fast")
-		$("nav ul li:nth-child(2)").first().children().removeClass("active")
-	}
 
-
-	if ($(".skills") == [] || $(".skills")[0] != undefined && $(".skills")[0].style.display == "none") {
-		$(".skills").fadeIn("slow")
-		$("nav ul li:nth-child(3)").first().children().addClass("active")
-	} else {
-		var skillsView = new SkillsView
-		$("nav ul li:nth-child(3)").first().children().addClass("active")
-	}
-})
 
 
 
