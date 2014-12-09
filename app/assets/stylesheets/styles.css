@@ -37,6 +37,7 @@
 	.skills div{
 		width: 100%;
 	}
+
 }
 
 @media screen and (min-width: 1052px) {
@@ -44,13 +45,12 @@
 		width: 31%;
 	}
 
-
 }
 
 
 
 body{
-	background: #ecf0f1;
+	background: #e0e0e0;
 	color: #363636;
 }
 .container{
@@ -66,7 +66,7 @@ a:hover{
 	color: #363636
 }
 .welcome{
-	background-image: url("/assets/stage.jpg.png");
+	background-image: url("/assets/stage.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	min-height: 700px;
